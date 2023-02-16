@@ -1,0 +1,17 @@
+---
+- name: testing templates
+  hosts: testServer
+  remote_user: ec2-server
+  become: yes
+
+  vars:
+    listenport: 8888
+
+  tasks:
+  - name: insert iptable template
+    template: src=iptables.j2 dest=/etc/sysconfig/iptables
+    notify: restart iptables
+
+  handlers:
+  - name: restart iptables
+     service: name=iptables state=restarted

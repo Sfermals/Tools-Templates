@@ -1,0 +1,18 @@
+---
+- name: testing blocks
+  hosts: testServer
+  remote_user: ec2-user
+  become: yes
+
+  tasks:
+    - block:
+       - name: copying in a block
+         copy: src=/tmp/test1.txt dest=/tmp/loops
+      rescue:
+       - debug: msg="Stop. Error time."
+      always:
+       - debug: msg="This message will always display."
+
+    - block:
+       - block:
+          - debug: msg="nesting some blocks"

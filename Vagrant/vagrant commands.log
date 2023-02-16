@@ -1,0 +1,43 @@
+# Vagrant commands
+
+vagrant init ubuntu/trusty 64
+
+vagrant init centos/7
+
+vagrant validate
+
+vagrant up
+
+vagrant reload
+
+vagrant suspend
+
+vagrant ssh
+
+#Shutting Down A Running Vagrant Machine
+
+exit
+
+vagrant halt
+
+vagrant halt --force
+
+vagrant suspend
+
+vagrant resume
+
+vagrant status
+
+## Vagrant Box Management
+
+vagrant box
+
+vagrant box list
+
+vagrant box remove your/boxName
+
+vagrant box update
+
+vagrant status 
+
+vagrant global-status
