@@ -1,4 +1,4 @@
 FROM nginx:1-alpine
-ADD . /usr/app
+ADD /website /usr/app
 RUN npm install
-RUN npm start
+RUN npm start*
